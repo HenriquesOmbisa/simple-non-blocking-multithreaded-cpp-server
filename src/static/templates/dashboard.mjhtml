@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MojoView</title>
+  <style>
+    body { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Arial, sans-serif; margin: 2rem; }
+    .card { border: 1px solid #ddd; border-radius: 12px; padding: 1rem 1.25rem; max-width: 720px; }
+    .muted { color: #666; }
+    code { background: #f3f3f3; padding: 0.1rem 0.35rem; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Ola, {{ name }}</h1>
+    <p class="muted">Este HTML foi renderizado no servidor com MojoView.</p>
+
+    {% if premium %}
+    <p><strong>Conta premium ativa.</strong> Obrigado por apoiar o projeto.</p>
+    {% endif %}
+
+    <p>Mensagem segura (escaped): {{ message }}</p>
+    <p>Mensagem raw (sem escape): {{{ message_raw }}}</p>
+
+    <hr />
+    <p>Primeira sintaxe suportada:</p>
+    <ul>
+      <li><code>&#123;&#123; var &#125;&#125;</code> para valor com escape HTML</li>
+      <li><code>&#123;&#123;&#123; var &#125;&#125;&#125;</code> para valor raw</li>
+      <li><code>&#123;% if chave %&#125;...&#123;% endif %&#125;</code> para bloco condicional</li>
+    </ul>
+  </div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+{% extends "layout.mj.html" %} {% block title %}Bem-vindo ao MojoRaw{% endblock
+%} {% block head %}
+<style>
+  .hero {
+    text-align: center;
+    padding: 2.5rem 1rem 1.5rem;
+  }
+  .hero h1 {
+    font-size: 2.4rem;
+    margin-bottom: 0.4rem;
+  }
+  .hero p {
+    font-size: 1.1rem;
+    color: var(--muted);
+    margin-top: 0;
+  }
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+  .feature-card {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem;
+    box-shadow: 0 4px 14px rgba(16, 42, 67, 0.05);
+  }
+  .feature-card h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1rem;
+    color: var(--brand);
+  }
+  .feature-card p {
+    margin: 0;
+    font-size: 0.88rem;
+    color: var(--muted);
+  }
+  .cta {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.65rem 1.5rem;
+    background: var(--brand);
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .cta:hover {
+    opacity: 0.9;
+  }
+</style>
+{% endblock %} {% block content %} {# Hero section #}
+<div class="hero card">
+  <h1>Olá, {{ name | trim | upper }}! 👋</h1>
+  <p>Servidor HTTP não-bloqueante em C++20 com template engine própria.</p>
+  <a class="cta" href="/view">Ver Dashboard</a>
+</div>
+
+{# Feature cards (rich list context) #}
+<div class="features">
+  {% for f in features %}
+  <div class="feature-card">
+    <h3>{{ f.title }}</h3>
+    <p>{{ f.desc }}</p>
+  </div>
+  {% endfor %}
+</div>
+
+{% if logged_in %}
+<div class="card" style="margin-top: 1.25rem">
+  <p>Sessão ativa — bem-vindo de volta!</p>
+</div>
+{% endif %} {% endblock %} {% block footer %} Construído com MojoRaw &mdash;
+C++20 &bull; epoll &bull; SO_REUSEPORT {% endblock %}

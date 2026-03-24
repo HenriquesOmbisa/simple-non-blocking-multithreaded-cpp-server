@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MojoView Dynamic Page</title>
+    <style>
+      :root {
+        --ink: #102a43;
+        --muted: #486581;
+        --surface: #f7fbff;
+        --line: #d9e2ec;
+        --brand: #0f766e;
+        --accent: #f59e0b;
+      }
+      body {
+        margin: 0;
+        background: linear-gradient(135deg, #f7fbff, #eef8f6);
+        font-family:
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Arial,
+          sans-serif;
+        color: var(--ink);
+      }
+      .wrap {
+        max-width: 880px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+      }
+      .card {
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 1.25rem;
+        box-shadow: 0 10px 30px rgba(16, 42, 67, 0.06);
+      }
+      .small {
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+      h1 {
+        margin-top: 0;
+      }
+      ul {
+        padding-left: 1.1rem;
+      }
+      .plan-item {
+        list-style: none;
+        margin: 0.35rem 0;
+        display: flex;
+        align-items: center;
+        gap: 0.45rem;
+      }
+      .dot {
+        width: 0.45rem;
+        height: 0.45rem;
+        border-radius: 999px;
+        background: var(--brand);
+        display: inline-block;
+      }
+      .badge {
+        padding: 0.15rem 0.6rem;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        font-size: 0.78rem;
+      }
+      .tier-pro {
+        background: #e6fffa;
+        border-color: #99f6e4;
+      }
+      .tier-enterprise {
+        background: #fffbeb;
+        border-color: #fde68a;
+      }
+      .tier-basic {
+        background: #eff6ff;
+        border-color: #bfdbfe;
+      }
+      code {
+        background: #f3f6fa;
+        border: 1px solid #e5ecf2;
+        border-radius: 8px;
+        padding: 0.1rem 0.35rem;
+      }
+    </style>
+  </head>
+  <body>
+    {# Comentario da linguagem .mj.html: nao aparece no HTML final #}
+    <main class="wrap">
+      <section class="card">
+        <h1>Bem-vindo, {{ name | trim | upper }}</h1>
+        <p class="small">Arquivo dinâmico: <code>page.mj.html</code></p>
+
+        {% if premium == "true" %}
+        <p>
+          <strong>Plano premium ativo.</strong> Tens acesso a todos os módulos.
+        </p>
+        {% elseif tier == "enterprise" %}
+        <p><strong>Plano enterprise.</strong> Contacta o suporte dedicado.</p>
+        {% else %}
+        <p><strong>Plano padrão.</strong> Faz upgrade quando quiseres.</p>
+        {% endif %}
+
+        <p>Mensagem segura: {{ message }}</p>
+        <p>Mensagem raw: {{{ message_raw }}}</p>
+
+        <h3>Planos disponíveis</h3>
+        <ul>
+          {% for item in plans %} {% include "partials/plan-item.mj.html" %} {%
+          endfor %}
+        </ul>
+
+        <p class="small">{{ footer_note | lower }}</p>
+
+        <hr />
+        <p class="small">Sintaxe suportada:</p>
+        <ul>
+          <li><code>&#123;&#123; var | upper &#125;&#125;</code></li>
+          <li><code>&#123;&#123;&#123; var &#125;&#125;&#125;</code></li>
+          <li>
+            <code
+              >&#123;% if cond %&#125; ... &#123;% elseif cond %&#125; ...
+              &#123;% else %&#125; ... &#123;% endif %&#125;</code
+            >
+          </li>
+          <li>
+            <code
+              >&#123;% for item in lista %&#125; ... &#123;% endfor
+              %&#125;</code
+            >
+          </li>
+          <li><code>&#123;% include "partials/file.mj.html" %&#125;</code></li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>

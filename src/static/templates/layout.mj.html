@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% block title %}MojoRaw{% endblock %}</title>
+    <style>
+      :root {
+        --ink: #102a43;
+        --muted: #486581;
+        --surface: #f7fbff;
+        --line: #d9e2ec;
+        --brand: #0f766e;
+        --accent: #f59e0b;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: linear-gradient(135deg, #f7fbff, #eef8f6);
+        font-family:
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Arial,
+          sans-serif;
+        color: var(--ink);
+      }
+      nav {
+        background: white;
+        border-bottom: 1px solid var(--line);
+        padding: 0.75rem 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+      }
+      nav .brand {
+        font-weight: 700;
+        color: var(--brand);
+        font-size: 1.1rem;
+        text-decoration: none;
+      }
+      nav a {
+        color: var(--muted);
+        text-decoration: none;
+        font-size: 0.9rem;
+      }
+      nav a:hover {
+        color: var(--ink);
+      }
+      .wrap {
+        max-width: 920px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+      }
+      .card {
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 1.5rem;
+        box-shadow: 0 10px 30px rgba(16, 42, 67, 0.06);
+        margin-bottom: 1.25rem;
+      }
+      h1 {
+        margin-top: 0;
+      }
+      .small {
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+      footer {
+        text-align: center;
+        padding: 1.5rem;
+        color: var(--muted);
+        font-size: 0.85rem;
+        border-top: 1px solid var(--line);
+        margin-top: 2rem;
+      }
+    </style>
+    {% block head %}{% endblock %}
+  </head>
+  <body>
+    <nav>
+      <a class="brand" href="/">MojoRaw</a>
+      <a href="/view">Dashboard</a>
+      <a href="/home">Home</a>
+      <a href="/json">JSON API</a>
+    </nav>
+
+    <main class="wrap">
+      {% block content %}
+      <p>No content defined.</p>
+      {% endblock %}
+    </main>
+
+    <footer>
+      {% block footer %}
+      <span>{{ footer_note }}</span> &mdash; MojoRaw C++20 {% endblock %}
+    </footer>
+  </body>
+</html>
