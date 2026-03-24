@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MojoRaw Docs Portal</title>
+    <link rel="stylesheet" href="/doc/assets/doc.css" />
+  </head>
+  <body>
+    <header class="top">
+      <div class="top-inner">
+        <a class="brand" href="/doc">MojoRaw Docs</a>
+        <nav class="nav">
+          <a href="/">Home</a>
+          <a href="/view">View</a>
+          <a href="/home">Template Home</a>
+          <a href="/json">API Check</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <section class="hero">
+        <h1>MojoRaw Guide Portal</h1>
+        <p>
+          Official local/web guide generated from README structure, now with
+          language routes and section routes.
+        </p>
+      </section>
+
+      <section class="grid">
+        <article class="card">
+          <h3>Portugues</h3>
+          <p>Guia tecnico completo em portugues.</p>
+          <div class="chips">
+            <a class="chip" href="/doc/pt">Open</a>
+            <a class="chip" href="/doc/pt/overview">Overview</a>
+            <a class="chip" href="/doc/pt/production">Production</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Espanol</h3>
+          <p>Guia del proyecto para implementacion y produccion.</p>
+          <div class="chips">
+            <a class="chip" href="/doc/es">Open</a>
+            <a class="chip" href="/doc/es/overview">Overview</a>
+            <a class="chip" href="/doc/es/production">Production</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Francais</h3>
+          <p>Guide local du serveur HTTP MojoRaw.</p>
+          <div class="chips">
+            <a class="chip" href="/doc/fr">Open</a>
+            <a class="chip" href="/doc/fr/overview">Overview</a>
+            <a class="chip" href="/doc/fr/production">Production</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Deutsch</h3>
+          <p>Lokaler Leitfaden fur Architektur und Betrieb.</p>
+          <div class="chips">
+            <a class="chip" href="/doc/de">Open</a>
+            <a class="chip" href="/doc/de/overview">Overview</a>
+            <a class="chip" href="/doc/de/production">Production</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Zhongwen</h3>
+          <p>MojoRaw ben di wen dang men hu.</p>
+          <div class="chips">
+            <a class="chip" href="/doc/zh">Open</a>
+            <a class="chip" href="/doc/zh/overview">Overview</a>
+            <a class="chip" href="/doc/zh/production">Production</a>
+          </div>
+        </article>
+      </section>
+
+      <section class="panel">
+        <h2>Route Pattern</h2>
+        <pre><code>/doc                      -> portal
+/doc/{lang}               -> language index
+/doc/{lang}/{section}     -> section page (.html)
+
+languages: pt, es, fr, de, zh
+sections: overview, setup, architecture, routes, templates, production</code></pre>
+      </section>
+
+      <p class="footer">MojoRaw Docs Portal - local and web ready.</p>
+    </main>
+  </body>
+</html>

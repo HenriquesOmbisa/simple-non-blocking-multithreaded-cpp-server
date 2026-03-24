@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MojoRaw Docs - pt - setup</title>
+    <link rel="stylesheet" href="/doc/assets/doc.css" />
+  </head>
+  <body>
+    <header class="top">
+      <div class="top-inner">
+        <a class="brand" href="/doc">MojoRaw Docs</a>
+        <nav class="nav">
+          <a href="/doc/pt">pt</a>
+          <a href="/doc/pt/overview">Overview</a>
+          <a href="/doc/pt/setup">Setup</a>
+          <a href="/doc/pt/architecture">Architecture</a>
+          <a href="/doc/pt/routes">Routes</a>
+          <a href="/doc/pt/templates">Templates</a>
+          <a href="/doc/pt/production">Production</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <section class="hero">
+        <h1>Como baixar, compilar e iniciar</h1>
+        <p>Passo a passo local para iniciar o servidor em poucos minutos.</p>
+      </section>
+
+      <section class="panel">
+        <h2>1. Clonar</h2><pre><code>git clone &lt;url-do-repo&gt;
+cd simple-non-blocking-multithreaded-cpp-server</code></pre><h2>2. Build</h2><pre><code>cmake -S src -B build
+cmake --build build</code></pre><h2>3. Executar</h2><pre><code>./build/mojoraw_example</code></pre><h2>4. Testar rapido</h2><pre><code>curl -i http://localhost:8080/hello
+curl -i http://localhost:8080/json
+curl -i http://localhost:8080/doc</code></pre><h2>Dependencias</h2><p>Linux, CMake 3.16+, compilador C++20, gzip. ZLIB e opcional para gzip on-the-fly.</p>
+      </section>
+
+      <section class="panel">
+        <h2>Quick Commands</h2>
+        <pre><code>cmake -S src -B build
+cmake --build build
+./build/mojoraw_example
+curl -i http://localhost:8080/hello
+curl -i http://localhost:8080/doc/pt</code></pre>
+      </section>
+
+      <p class="footer">Route: /doc/pt/setup</p>
+    </main>
+  </body>
+</html>

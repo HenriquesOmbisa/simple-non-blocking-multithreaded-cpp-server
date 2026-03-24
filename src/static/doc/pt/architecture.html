@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MojoRaw Docs - pt - architecture</title>
+    <link rel="stylesheet" href="/doc/assets/doc.css" />
+  </head>
+  <body>
+    <header class="top">
+      <div class="top-inner">
+        <a class="brand" href="/doc">MojoRaw Docs</a>
+        <nav class="nav">
+          <a href="/doc/pt">pt</a>
+          <a href="/doc/pt/overview">Overview</a>
+          <a href="/doc/pt/setup">Setup</a>
+          <a href="/doc/pt/architecture">Architecture</a>
+          <a href="/doc/pt/routes">Routes</a>
+          <a href="/doc/pt/templates">Templates</a>
+          <a href="/doc/pt/production">Production</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <section class="hero">
+        <h1>Arquitetura do servidor</h1>
+        <p>Como a engine de rede funciona internamente.</p>
+      </section>
+
+      <section class="panel">
+        <h2>Modelo</h2><p>Cada worker cria seu proprio socket de servidor e seu proprio epoll (SO_REUSEPORT), evitando lock global.</p><h2>Ciclo de request</h2><ol><li>accept4 non-blocking</li><li>leitura em buffer</li><li>validacao de request completa</li><li>parse HTTP</li><li>router dispatch</li><li>serializacao da resposta</li><li>write non-blocking</li></ol><h2>Protecoes</h2><ul><li>Limite de payload: 2MB (413)</li><li>Idle timeout: 30s</li><li>Path traversal bloqueado em static/doc</li></ul>
+      </section>
+
+      <section class="panel">
+        <h2>Quick Commands</h2>
+        <pre><code>cmake -S src -B build
+cmake --build build
+./build/mojoraw_example
+curl -i http://localhost:8080/hello
+curl -i http://localhost:8080/doc/pt</code></pre>
+      </section>
+
+      <p class="footer">Route: /doc/pt/architecture</p>
+    </main>
+  </body>
+</html>

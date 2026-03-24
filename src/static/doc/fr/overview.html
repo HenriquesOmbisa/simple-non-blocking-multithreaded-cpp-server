@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MojoRaw Docs - fr - overview</title>
+    <link rel="stylesheet" href="/doc/assets/doc.css" />
+  </head>
+  <body>
+    <header class="top">
+      <div class="top-inner">
+        <a class="brand" href="/doc">MojoRaw Docs</a>
+        <nav class="nav">
+          <a href="/doc/fr">fr</a>
+          <a href="/doc/fr/overview">Overview</a>
+          <a href="/doc/fr/setup">Setup</a>
+          <a href="/doc/fr/architecture">Architecture</a>
+          <a href="/doc/fr/routes">Routes</a>
+          <a href="/doc/fr/templates">Templates</a>
+          <a href="/doc/fr/production">Production</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <section class="hero">
+        <h1>Presentation de MojoRaw</h1>
+        <p>Contexte et objectif du projet.</p>
+      </section>
+
+      <section class="panel">
+        <p>Serveur HTTP/1.1 en C++20, non bloquant, multi-thread, oriente performance et controle.</p>
+      </section>
+
+      <section class="panel">
+        <h2>Quick Commands</h2>
+        <pre><code>cmake -S src -B build
+cmake --build build
+./build/mojoraw_example
+curl -i http://localhost:8080/hello
+curl -i http://localhost:8080/doc/fr</code></pre>
+      </section>
+
+      <p class="footer">Route: /doc/fr/overview</p>
+    </main>
+  </body>
+</html>

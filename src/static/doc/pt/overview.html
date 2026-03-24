@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MojoRaw Docs - pt - overview</title>
+    <link rel="stylesheet" href="/doc/assets/doc.css" />
+  </head>
+  <body>
+    <header class="top">
+      <div class="top-inner">
+        <a class="brand" href="/doc">MojoRaw Docs</a>
+        <nav class="nav">
+          <a href="/doc/pt">pt</a>
+          <a href="/doc/pt/overview">Overview</a>
+          <a href="/doc/pt/setup">Setup</a>
+          <a href="/doc/pt/architecture">Architecture</a>
+          <a href="/doc/pt/routes">Routes</a>
+          <a href="/doc/pt/templates">Templates</a>
+          <a href="/doc/pt/production">Production</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <section class="hero">
+        <h1>MojoRaw: o que e este projeto</h1>
+        <p>Guia de introducao para quem acabou de baixar o repositorio.</p>
+      </section>
+
+      <section class="panel">
+        <h2>Resumo</h2><p>MojoRaw e um servidor HTTP/1.1 non-blocking em C++20 com epoll, multithread por SO_REUSEPORT, parser HTTP proprio, roteador com parametros e template engine.</p><h2>Quem criou</h2><p>O projeto nasceu em 2024 como iniciativa pessoal de aprendizado e evoluiu para uma base open source orientada a performance.</p><h2>Para que serve</h2><ul><li>Aprender redes e servidores em C++.</li><li>Criar APIs e sites SSR leves.</li><li>Ter controle total sem framework pesado.</li></ul>
+      </section>
+
+      <section class="panel">
+        <h2>Quick Commands</h2>
+        <pre><code>cmake -S src -B build
+cmake --build build
+./build/mojoraw_example
+curl -i http://localhost:8080/hello
+curl -i http://localhost:8080/doc/pt</code></pre>
+      </section>
+
+      <p class="footer">Route: /doc/pt/overview</p>
+    </main>
+  </body>
+</html>
