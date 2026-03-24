@@ -1,0 +1,23 @@
+# Build outputs
+/build/
+/src/build/
+
+# CMake generated files
+CMakeCache.txt
+cmake_install.cmake
+CMakeFiles/
+Makefile
+compile_commands.json
+
+# Generated static precompressed assets
+src/static/**/*.gz
+
+# Logs and runtime artifacts
+*.log
+*.pid
+
+# Editor/OS noise
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
